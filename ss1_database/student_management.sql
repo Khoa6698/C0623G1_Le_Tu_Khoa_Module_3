@@ -1,25 +1,27 @@
 create database student_management;
 use student_management;
 
-create table Student(
- id int,
- name varchar(200),
- age int,
- country varchar(50)
+CREATE TABLE student (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(200),
+    age INT,
+    country VARCHAR(50)
 );
-insert into Student(id,name,age,country)
+insert into student(id,name,age,country)
 values(1,'Le Tu Khoa',24,'VN');
-create table Class(
-id int primary key auto_increment,
-Class_name varchar(50)
+
+CREATE TABLE class (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    class_name VARCHAR(50)
 );
-insert into Class(Class_name)
+insert into class(class_name)
 values('C0623G1');
-create table Teachers(
-id int primary key auto_increment,
-Teacher_name varchar(50),
-age int,
-country varchar(50)
+
+CREATE TABLE teachers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    teacher_name VARCHAR(50),
+    age INT,
+    country VARCHAR(50)
 );
-insert into Teachers(Teacher_name,age,country)
+insert into teachers(teacher_name,age,country)
 values('Hai',18,'VN'),('Cong',19,'LAO');
