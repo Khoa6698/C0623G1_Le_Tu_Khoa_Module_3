@@ -14,7 +14,7 @@ SELECT
 FROM
     class
 WHERE
-    StartDate LIKE '%12%';
+    MONTH(StartDate) = 12;
 
 -- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
 SELECT 
@@ -41,4 +41,4 @@ FROM
     mark ON student.StudentId = mark.StudentId
         JOIN
     subject ON mark.SubId = subject.SubId
-ORDER BY mark DESC;
+ORDER BY mark DESC, StudentName ASC;
