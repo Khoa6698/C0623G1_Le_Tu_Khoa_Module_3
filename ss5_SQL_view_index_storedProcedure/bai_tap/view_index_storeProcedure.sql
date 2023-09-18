@@ -1,12 +1,10 @@
 USE demo;
 
--- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
-CREATE UNIQUE INDEX index_products
-ON products(product_id,product_code);
--- Sử dụng câu lệnh EXPLAIN để biết được câu lệnh SQL của bạn thực thi như nào
-EXPLAIN SELECT *
-FROM products;
-
+-- Index
+explain select * from products where product_name = 'banh';
+alter table products add index index_product_code(product_code);
+alter table products add index index_product_name_price(product_name,product_price);
+explain select * from products where product_name = 'banh';
 -- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
 CREATE VIEW view_product AS
     SELECT 
@@ -35,7 +33,7 @@ CALL find_all_product();
 
 -- Tạo store procedure thêm một sản phẩm mới
 delimiter // 
-CREATE PROCEDURE add_prodict(
+CREATE PROCEDURE add_product(
  product_code VARCHAR (10),
  product_name VARCHAR(50),
  product_price DOUBLE,
@@ -48,7 +46,7 @@ CREATE PROCEDURE add_prodict(
  END //
  delimiter ;
 
- CALL add_prodict('sp_006','thuoc',18000,10,'kich_thich','còn nhiều');
+ CALL add_product('sp_006','thuoc',18000,10,'kich_thich','còn nhiều');
  
  -- Tạo store procedure sửa thông tin sản phẩm theo id
  delimiter //
