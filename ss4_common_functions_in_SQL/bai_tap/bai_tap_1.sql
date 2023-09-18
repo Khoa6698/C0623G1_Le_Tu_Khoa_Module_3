@@ -22,10 +22,14 @@ GROUP BY s.SubId;
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình
 -- của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
-select s.*, avg(m.Mark) as 'Điểm TB'
-from student s join mark m on s.StudentId = m.StudentId
-group by s.StudentId
-order by m.StudentId desc;
+SELECT 
+    s.*, AVG(m.Mark) AS 'Điểm TB'
+FROM
+    student s
+        JOIN
+    mark m ON S.StUdentId = m.StUdentId
+GROUP BY S.StUdentId
+ORDER BY 'Điểm TB' DESC;
 
 
 
