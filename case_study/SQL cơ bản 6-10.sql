@@ -89,7 +89,7 @@ SELECT
     hd.ngay_lam_hop_dong,
     hd.ngay_ket_thuc,
     hd.tien_dat_coc,
-    SUM(hdct.so_luong)
+    SUM(ifnull(hdct.so_luong,0)) as 'so_luong_dich_vu_di_kem'
 FROM
     hop_dong hd
         LEFT JOIN
