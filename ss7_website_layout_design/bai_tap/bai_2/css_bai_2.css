@@ -1,0 +1,128 @@
+.row2 {
+    background-color: #CDCDCD;
+    margin: 0;
+}
+
+.row2 .menu > ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.row2 .menu {
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+header {
+    background-color: gainsboro;
+    height: 50px;
+}
+
+header > image {
+}
+
+.video-left > p, h5 {
+    margin: 0;
+}
+
+.video-left .text-1 {
+    font-weight: bold;
+}
+.video-left .text-2 {
+    color: gray;
+    font-size: 12px;
+}
+.video-left .text-3 {
+    color: gray;
+    font-weight: bold;
+}
+
+#main-left {
+    display: flex;
+}
+.video-right > p, h5 {
+    margin: 0;
+}
+
+.video-right .text-1 {
+    font-weight: bold;
+}
+.video-right .text-2 {
+    color: gray;
+    font-size: 12px;
+}
+.video-right .text-3 {
+    color: gray;
+    font-weight: bold;
+}
+
+#main-left {
+    display: flex;
+}
+
+footer {
+    background-color: #181818;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+.row1

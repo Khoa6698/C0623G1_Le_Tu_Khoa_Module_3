@@ -1,0 +1,117 @@
+/* For desktop: */
+.row {
+    display: flex;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 50%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.header {
+    background: #212121;
+    padding: 20px 5px;
+    color: #CDCDCD;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.header .login {
+    text-align: right;
+}
+
+.between {
+    background: #969393;
+    color: #CDCDCD;
+}
+
+.welcome {
+    padding: 0;
+    margin: 0;
+}
+
+.link ul li {
+    list-style: none;
+    color: blue;
+    padding: 10px 10px 10px 20px;
+}
+
+.welcome {
+    color: black;
+}
+
+.ADS ol li {
+    list-style: none;
+    color: black;
+    padding: 20px 10px 10px 20px;
+}
+
+.under {
+    text-align: center;
+    background-color: #363434;
+    color: #CDCDCD;
+    height: 30px;
+    padding-top: 15px;
+}
+.content {
+    height: 100vh;
+    background-color: white;
+}
+.ads{
+    border: 1px #CDCDCD solid;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0 ;
+    box-shadow: inset 0px 2px 1px #0000001c;
+}
