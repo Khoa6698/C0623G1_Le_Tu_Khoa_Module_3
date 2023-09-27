@@ -25,7 +25,7 @@ public class ProductDiscountCalculator extends HttpServlet {
         req.setAttribute("discountAmount",discountAmount);
         req.setAttribute("discountPrice",discountPrice);
         RequestDispatcher requestDispatcher =
-                req.getRequestDispatcher("/abc.jsp");
+                req.getRequestDispatcher("/result.jsp");
         requestDispatcher.forward(req,resp);
     }
 }
