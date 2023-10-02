@@ -26,12 +26,17 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void remove(int id) {
-        repository.remove(id);
+    public void remove(int id)throws Exception  {
+        ProductManagement productManagement = repository.findById(id);
+        if(productManagement==null){
+            throw new Exception("Không tìm thấy")
+        }else {
+            repository.remove(id);
+        }
     }
 
     @Override
-    public ProductManagement findById(int id) {
+    public ProductManagement findById(int id){
         return repository.findById(id);
     }
 }

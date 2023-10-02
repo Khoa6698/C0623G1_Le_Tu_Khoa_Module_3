@@ -41,10 +41,10 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void listProduct(HttpServletRequest req, HttpServletResponse resp) {
-        List<ProductManagement> products = this.productService.findAll();
-        req.setAttribute("productManagement", products);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/list.jsp");
         try {
+            List<ProductManagement> products = this.productService.findAll();
+            req.setAttribute("productManagement", products);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/list.jsp");
             requestDispatcher.forward(req, resp);
         } catch (ServletException e) {
             throw new RuntimeException(e);
@@ -163,7 +163,6 @@ public class ProductServlet extends HttpServlet {
 
     private void deleteProduct(HttpServletRequest req, HttpServletResponse resp) {
         int id = Integer.parseInt(req.getParameter("id"));
-        ProductManagement products = this.productService.findById(id);
         RequestDispatcher requestDispatcher;
         if (products == null) {
             requestDispatcher = req.getRequestDispatcher("error-404.jsp");
