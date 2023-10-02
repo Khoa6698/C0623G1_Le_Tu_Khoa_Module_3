@@ -35,29 +35,40 @@ public class UserServlet extends HttpServlet {
                 break;
             default:
                 showListUser(req, resp);
+                break;
         }
     }
 
-    private void showFormEdit(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    private void showFormEdit(HttpServletRequest req, HttpServletResponse resp) {
         int id = Integer.parseInt(req.getParameter("id"));
         User user = userService.selectUser(id);
-        req.setAttribute("user", user);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/edit.jsp");
-        requestDispatcher.forward(req, resp);
+        if(user !=null){
+            req.setAttribute("user", user);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/edit.jsp");
+            try {
+                requestDispatcher.forward(req, resp);
+            }catch (ServletException | IOException e)
+            e.printStackTrace()
+        }else {
+            error404(req,resp);
+        }
     }
 
     private void deleteUser(HttpServletRequest req, HttpServletResponse resp) {
         int id = Integer.parseInt(req.getParameter("id"));
         User user = userService.selectUser(id);
-        req.setAttribute("user", user);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/delete.jsp");
-        try {
-            requestDispatcher.forward(req, resp);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(user!=null){
+            req.setAttribute("user", user);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/delete.jsp");
+            try {
+                requestDispatcher.forward(req, resp);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else {
+            error404(req,resp);
         }
     }
 
@@ -73,6 +84,15 @@ public class UserServlet extends HttpServlet {
             throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/create.jsp");
         requestDispatcher.forward(req, resp);
+    }
+
+    private static void error404(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/error-404.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -93,6 +113,8 @@ public class UserServlet extends HttpServlet {
                 break;
             case "search":
                 searchUser(req,resp);
+                break;
+            default:
                 break;
         }
     }
